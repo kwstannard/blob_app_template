@@ -1,0 +1,10 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      %a.brand{ href: '/' }=settings.title
+      %ul.nav
+        %li
+          %a{ href: '/about' }About
+        %li
+          %a{ href: '/contact' }Contact
+      %div.btn-group.pull-right= haml :'login/dropdown'

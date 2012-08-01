@@ -1,0 +1,13 @@
+%html
+  %head
+    %meta{charset: "utf-8"}
+    %title=settings.title
+    %meta{name: "description", content: "A site for organizing games."}
+    %meta{name: "author", content: "Kelly Stannard"}
+    %link{rel: "stylesheet", href: "/bootstrap/css/bootstrap.min.css"}
+    %script{ type: "text/javascript", src: "/jquery.js"}
+  %body{ style: "padding-top: 64px;" }
+    %div= haml :navbar
+    %div= haml :flash_messages
+    %div= yield
+    %script{ type: "text/javascript", src: "/bootstrap/js/bootstrap.min.js"}
