@@ -9,6 +9,7 @@ class Application
   attr_accessor :name
 
   def initialize(options = {})
+    super()
     @name = options[:name]
   end
 

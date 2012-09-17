@@ -8,7 +8,7 @@ class BadPassword < RuntimeError; end
 module SessionInterface
   def fetch_user(email)
     emit_user_by_email(email)
-  rescue InstanceHandler::InstanceNotFound
+  rescue TheBlob::InstanceNotFound
     raise NoUserFound
   end
 

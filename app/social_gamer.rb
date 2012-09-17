@@ -18,7 +18,7 @@ configure :development do
 end
 
 get '/' do
-  haml :'main/_dashboard', locals: {count: app.users.count}
+  haml :'main/_dashboard', locals: {count: 1}
 end
 
 get '/register' do
@@ -26,11 +26,8 @@ get '/register' do
 end
 
 post '/register' do
-  user = User.new email: params[:email],
-                  password: params[:password],
-                  password_confirmation: params[:password_confirmation]
-  app.absorb user
-  new_session user
+  app.create_user params
+  new_session app.fetch_user(params[:email])
   redirect '/'
 end
 

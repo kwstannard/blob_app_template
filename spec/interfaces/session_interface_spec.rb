@@ -6,7 +6,7 @@ class Subj; include SessionInterface; include TheBlob; end
 describe SessionInterface do
 
   let(:subj_class) { Class.new }
-  let(:subject) { subj_class.new }
+  subject { subj_class.new memory: MemoryPersister }
 
   let(:params) { { email: double,
                    password: "pass",
@@ -15,8 +15,8 @@ describe SessionInterface do
   before(:each) do
     @dir = File.expand_path("../../../lib/test_instances", __FILE__)
     File.stub!(:expand_path) {@dir}
-    subj_class.class_eval { include SessionInterface }
     subj_class.class_eval { include TheBlob }
+    subj_class.class_eval { include SessionInterface }
   end
 
   describe '#create_user' do

@@ -1,8 +1,8 @@
-%form{ action: '/register', method: 'post' }
-  %label.span1 Email
+%form{ action: '/register', method: 'post', id: :registration_form}
+  %label.span1{ for: :email } Email
   %input.span2.form_input{ type: "email", name: :email}
-  %label.span1 Password
+  %label.span1{ for: :password }Password
   %input.span2.form_input{ type: "password", name: :password}
-  %label.span1 Confirm Password
-  %input.span2.form_input{ type: "password_confirmation", name: :password_confirmation}
+  %label.span1{ for: :password_confirmation } Confirm Password
+  %input.span2.form_input{ type: "password", name: :password_confirmation}
   %input.btn{ name: "submit", type: "submit", value: "Register" }
